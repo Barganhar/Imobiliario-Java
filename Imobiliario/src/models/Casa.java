@@ -7,12 +7,12 @@ public class Casa {
 		setCriadoEm(new Date());
 	}
 	
-	public Casa(String nome, String endereco, String cep, double valor, String vendedor) {
+	public Casa(String nome, String endereco, String cep, double valor, String corretor) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cep = cep;
 		this.valor = valor;
-		this.vendedor = vendedor;
+		this.corretor = corretor;
 	}
 	
 	private String nome;
@@ -48,12 +48,12 @@ public class Casa {
 		this.valor = valor;
 	}
 
-	public String getVendedor() {
-		return vendedor;
+	public String getCorretor() {
+		return corretor;
 	}
 
-	public void setVendedor(String vendedor) {
-		this.vendedor = vendedor;
+	public void setCorretor(String corretor) {
+		this.corretor = corretor;
 	}
 
 	public Date getCriadoEm() {
