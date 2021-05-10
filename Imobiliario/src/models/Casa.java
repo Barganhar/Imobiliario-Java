@@ -67,7 +67,12 @@ public class Casa {
 	private String endereco;
 	private String cep;
 	private Double valor;
-	private String vendedor;	
+	private String corretor;	
 	private Date criadoEm;
 
+	@Override
+	public String toString() {
+		return "Nome: " + nome + " | Endereço: " + endereco + " | Cep: " + cep + " | Valor: " + valor + " | Corretor: " + corretor + " |  Criado em: " + criadoEm;
+	}
+	
 }

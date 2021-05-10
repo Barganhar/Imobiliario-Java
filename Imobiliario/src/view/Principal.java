@@ -25,13 +25,15 @@ public class Principal {
 				System.out.println("\nteste 1");
 				break;
 			case 2:
-				System.out.println("\nteste 2");
+				//System.out.println("\nteste 2");
+				CadastrarCasa.renderizar();
 				break;
 			case 3:
 				System.out.println("\nteste 3");
 				break;
 			case 4:
-				System.out.println("\nteste 4");
+				//System.out.println("\nteste 4");
+				ListarCasas.renderizar();
 				break;
 			case 5:
 				System.out.println("\nteste 5");
