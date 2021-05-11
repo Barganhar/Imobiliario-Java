@@ -11,13 +11,13 @@ public class Principal {
 			System.out.println("\n1 - Cadastrar Cliente");
 			System.out.println("\n2 - Cadastrar Casa");
 			System.out.println("\n3 - Cadastrar Corretor");// arrumar numeragem
-			System.out.println("\n3 - Listar Clientes");
-			System.out.println("\n4 - Listar Casas");
-			System.out.println("\n5 - Listar Corretores");
-			System.out.println("\n6 - Deletar Cliente");
-			System.out.println("\n7 - Deletar Casa");
-			System.out.println("\n8 - Compra da casa");
-			System.out.println("\n9 - Listar compras de casa");
+			System.out.println("\n4 - Listar Clientes");
+			System.out.println("\n5 - Listar Casas");
+			System.out.println("\n6 - Listar Corretores");
+			System.out.println("\n7 - Deletar Cliente");
+			System.out.println("\n8 - Deletar Casa");
+			System.out.println("\n9 - Compra da casa");
+			//System.out.println("\n9 - Listar compras de casa");
 			System.out.println("\n0 - Sair");
 			op = sc.nextInt();
 			switch (op) {
@@ -47,18 +47,17 @@ public class Principal {
 				DeletarCasa.renderizar();
 				break;
 			case 9:
-				ComprarCasa.renderizar();
+				//ComprarCasa.renderizar();
 				break;
 			case 0:
-				ListarComprarCasa.renderizar();
+				//ListarComprarCasa.renderizar();
 				break;
 			default:
-				System.out.println("\nOpï¿½ï¿½o invï¿½lida!");
+				System.out.println("\nOpção invalida!");
 				break;				
 			}
 		}while (op != 0);
-
+		sc.close();
 	}
-	sc.close();
 
 }

@@ -29,7 +29,7 @@ public class CadastrarCliente {
 			
 			// OBSERVA��O AQUI POIS � BOOLEANO
 			System.out.println("\nPossui forma de garantia? (S/N)");
-			cliente.setGarantia(sc.nextBoolean());
+			cliente.setGarantia(sc.next());
 			
 			if (ClienteController.cadastrar(cliente)) {
 				System.out.println("Cliente cadastrado com sucesso!");

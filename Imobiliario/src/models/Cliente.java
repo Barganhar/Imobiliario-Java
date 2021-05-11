@@ -11,7 +11,7 @@ public class Cliente {
 	private String cpf;
 	private String email;
 	private Float salario;
-	private Boolean garantia;
+	private String garantia;
 	private Date criadoEm;
 	
 	public String getNome() {
@@ -38,10 +38,10 @@ public class Cliente {
 	public void setSalario(Float salario) {
 		this.salario = salario;
 	}
-	public Boolean getGarantia() {
+	public String getGarantia() {
 		return garantia;
 	}
-	public void setGarantia(Boolean garantia) {
+	public void setGarantia(String garantia) {
 		this.garantia = garantia;
 	}
 	public Date getCriadoEm() {
