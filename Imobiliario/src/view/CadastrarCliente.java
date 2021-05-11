@@ -1,13 +1,16 @@
 package view;
+
 import java.util.Scanner;
+
+import controllers.ClienteController;
 import models.Cliente;
 
 public class CadastrarCliente {
 
-		private static Cliente cliente;
 		private static Scanner sc = new Scanner(System.in);
-		
-		public static Cliente renderizar() {
+		private static Cliente cliente;
+
+		public static void renderizar() {
 			cliente = new Cliente();
 			
 			System.out.println("\n______________CADASTRO DE CLIENTE______________");
@@ -20,14 +23,19 @@ public class CadastrarCliente {
 			System.out.println("\nEmail: ");
 			cliente.setEmail(sc.next());
 			
-			// OBSERVAÇÃO AQUI POIS É FLOAT
-			System.out.println("\nSalário: ");
+			// OBSERVAï¿½ï¿½O AQUI POIS ï¿½ FLOAT
+			System.out.println("\nSalï¿½rio: ");
 			cliente.setSalario(sc.nextFloat());
 			
-			// OBSERVAÇÃO AQUI POIS É BOOLEANO
+			// OBSERVAï¿½ï¿½O AQUI POIS ï¿½ BOOLEANO
 			System.out.println("\nPossui forma de garantia? (S/N)");
 			cliente.setGarantia(sc.nextBoolean());
 			
-			return cliente;
+			if (ClienteController.cadastrar(cliente)) {
+				System.out.println("Cliente cadastrado com sucesso!");
+			} else {
+				System.out.println("Esse cliente ja existe");
+			}
+			
 		}
 }

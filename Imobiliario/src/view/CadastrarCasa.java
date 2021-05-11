@@ -4,19 +4,19 @@ import models.Casa;
 import controllers.CasaController;
 
 public class CadastrarCasa {
-	
-	private static Casa casa;
+
 	private static Scanner sc = new Scanner(System.in);
-	
+	private static Casa casa;
+		
 	public static void renderizar() {//public static  Casa renderizar
 		casa = new Casa();
 		
 		System.out.println("\n______________CADASTRAR CASA______________");
 		
-		System.out.println("\nNome atribuido à casa: ");
+		System.out.println("\nNome atribuido ï¿½ casa: ");
 		casa.setNome(sc.next());
 		
-		System.out.println("\nEndereço: ");
+		System.out.println("\nEndereï¿½o: ");
 		casa.setEndereco(sc.next());
 		
 		System.out.println("\nCEP: ");
@@ -33,7 +33,7 @@ public class CadastrarCasa {
 		if(CasaController.cadastrar(casa)) {
 			System.out.println("\n Casa cadastrada com sucesso!");
 		}else {
-			System.out.println("\n Essa casa já existe");
+			System.out.println("\n Essa casa jï¿½ existe");
 		}
 	}
 

@@ -28,4 +28,13 @@ public class CasaController {
 		}
 		return null;
 	}
+
+	public static Boolean deletar(String nome) {
+		Casa casa = buscarPorNome(nome);
+		if(casa != null) {
+			casas.remove(casa);
+			return true;
+		}
+		return false;
+	}
 }

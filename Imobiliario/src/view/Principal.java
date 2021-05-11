@@ -13,51 +13,52 @@ public class Principal {
 			System.out.println("\n3 - Cadastrar Corretor");// arrumar numeragem
 			System.out.println("\n3 - Listar Clientes");
 			System.out.println("\n4 - Listar Casas");
-			System.out.println("\n5 - Deletar Cliente");
-			System.out.println("\n6 - Deletar Casa");
-			System.out.println("\n7 - Compra da casa");
-			System.out.println("\n8 - Listar compras de casa");
-			System.out.println("\n9 - Teste");
+			System.out.println("\n5 - Listar Corretores");
+			System.out.println("\n6 - Deletar Cliente");
+			System.out.println("\n7 - Deletar Casa");
+			System.out.println("\n8 - Compra da casa");
+			System.out.println("\n9 - Listar compras de casa");
 			System.out.println("\n0 - Sair");
 			op = sc.nextInt();
 			switch (op) {
 			case 1:
-				System.out.println("\nteste 1");
+				CadastrarCliente.renderizar();
 				break;
 			case 2:
 				//System.out.println("\nteste 2");
 				CadastrarCasa.renderizar();
 				break;
 			case 3:
-				System.out.println("\nteste 3");
+				CadastrarCorretor.renderizar();
 				break;
 			case 4:
-				//System.out.println("\nteste 4");
-				ListarCasas.renderizar();
+				ListarCliente.renderizar();
 				break;
 			case 5:
-				System.out.println("\nteste 5");
+				ListarCasas.renderizar();
 				break;
 			case 6:
-				System.out.println("\nteste 6");
+				ListarCorretor.renderizar();
 				break;
 			case 7:
-				System.out.println("\nteste 7");
+				DeletarCliente.renderizar();
 				break;
 			case 8:
-				System.out.println("\nteste 8");
+				DeletarCasa.renderizar();
 				break;
 			case 9:
-				System.out.println("\nteste 9");
+				ComprarCasa.renderizar();
 				break;
 			case 0:
-				System.out.println("\nSaindo...");
+				ListarComprarCasa.renderizar();
 				break;
 			default:
-				System.out.println("\nOpção inválida!");
+				System.out.println("\nOpï¿½ï¿½o invï¿½lida!");
 				break;				
 			}
 		}while (op != 0);
+
 	}
+	sc.close();
 
 }
