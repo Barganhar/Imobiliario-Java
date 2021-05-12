@@ -33,7 +33,9 @@ public class AlterarCorretor {
 				System.out.println("\nOpção inexistente!");
 				break;
 			}
-			
+			if(op != 0)
+			CorretorController.alterar(cpf,op,sc.next());
+
 			}while(op != 0);
 		
 			System.out.println("\nAlterado com sucesso!\n");

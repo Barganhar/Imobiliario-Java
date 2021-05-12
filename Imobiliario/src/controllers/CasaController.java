@@ -37,4 +37,21 @@ public class CasaController {
 		}
 		return false;
 	}
+
+	public static void alterar(String nome, int op, String newValue) {
+		Casa casa = buscarPorNome(nome);
+		if(op==1)
+			casa.setNome(newValue);
+		if(op==2)
+			casa.setEndereco(newValue);
+		if(op==3)
+			casa.setCep(newValue);
+	}
+
+	public static void alterar(String nome, int op, Double newValue) {
+		Casa casa = buscarPorNome(nome);
+		if(op==4)
+			casa.setValor(newValue);
+		
+	}
 }

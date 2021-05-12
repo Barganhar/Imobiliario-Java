@@ -34,6 +34,7 @@ public class AlterarCasa {
 				
 			case 4:
 				System.out.println("\nInsira um novo Valor:");
+				CasaController.alterar(nome,op,sc.nextDouble());
 				break;
 				
 			case 0:
@@ -43,9 +44,11 @@ public class AlterarCasa {
 				System.out.println("\nOpção inexistente!");
 				break;
 			}
+			if(op!=0 && op!= 4)
+			CasaController.alterar(nome,op,sc.next());
 			
-			}while(op != 0);
-		
+			}while(op != 0 );
+
 			System.out.println("\nAlterado com sucesso!\n");
 		}
 		else 

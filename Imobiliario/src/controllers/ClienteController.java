@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 
 import models.Cliente;
+import models.Pessoa;
 
 public class ClienteController {
 
@@ -13,7 +14,7 @@ public class ClienteController {
 	}
 
 	public static boolean cadastrar(Cliente cliente) {
-		if(buscarPorCpf(cliente.getCpf()) == null) {
+		if(buscarPorCpf(cliente.getPessoa().getCpf()) == null) {
 			clientes.add(cliente);
 			return true;
 		}
@@ -22,7 +23,7 @@ public class ClienteController {
 
 	public static Cliente buscarPorCpf(String cpf) {
 		for(Cliente clienteCadastrado : clientes) {
-			if(clienteCadastrado.getCpf().equals(cpf)) {
+			if(clienteCadastrado.getPessoa().getCpf().equals(cpf)) {
 				return clienteCadastrado;
 			}
 		}	
@@ -36,5 +37,30 @@ public class ClienteController {
 			return true;
 		}
 		return false;
+	}
+
+	public static void alterar(String cpf, int op, String newValue) {
+		Cliente cliente = buscarPorCpf(cpf);
+		Pessoa pessoa = cliente.getPessoa();
+		if(op==1)
+			pessoa.setNome(newValue);
+		if(op==2)
+			pessoa.setCpf(newValue);
+		if(op==3)
+			pessoa.setEmail(newValue);
+		if(op==5)
+			pessoa.setGarantia(newValue);
+
+		cliente.setPessoa(pessoa);
+	}
+
+	public static void alterar(String cpf, int op, Float newValue) {
+		Cliente cliente = buscarPorCpf(cpf);
+		Pessoa pessoa = cliente.getPessoa();
+		if(op==4)
+			pessoa.setSalario(newValue);
+		
+		cliente.setPessoa(pessoa);
+		
 	}
 }

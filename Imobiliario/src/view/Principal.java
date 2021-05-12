@@ -3,8 +3,6 @@ package view;
 
 import java.util.Scanner;
 
-// import controllers.TriagemController;
-
 public class Principal {
 
 	private static Scanner sc = new Scanner(System.in);

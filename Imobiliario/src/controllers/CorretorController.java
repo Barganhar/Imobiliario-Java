@@ -37,4 +37,12 @@ public class CorretorController {
 		}
 		return false;
 	}
+
+	public static void alterar(String cpf, int op, String newValue) {
+		Corretor corretor = buscarPorCpf(cpf);
+		if(op==1)
+			corretor.setNome(newValue);
+		if(op==2)
+			corretor.setCpf(newValue);
+	}
 }

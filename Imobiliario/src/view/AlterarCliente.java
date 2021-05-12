@@ -35,6 +35,7 @@ public class AlterarCliente {
 				
 			case 4:
 				System.out.println("\nInsira um novo Salario:");
+				ClienteController.alterar(cpf,op,sc.nextFloat());
 				break;
 				
 			case 5:
@@ -48,6 +49,8 @@ public class AlterarCliente {
 				System.out.println("\nOpção inexistente!");
 				break;
 			}
+			if(op!=0 && op!= 4)
+			ClienteController.alterar(cpf,op,sc.next());
 			
 			}while(op != 0);
 		
