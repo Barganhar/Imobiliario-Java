@@ -14,10 +14,10 @@ public class CadastrarCasa {
 
 		System.out.println("\n-----CADASTRAR CASA-----");
 
-		System.out.println("\nNome atribuido √† casa: ");
+		System.out.println("\nNome atribuido a casa: ");
 		casa.setNome(sc.next());
 
-		System.out.println("\nEndere√ßo: ");
+		System.out.println("\nEndereÁo: ");
 		casa.setEndereco(sc.next());
 
 		System.out.println("\nCEP: ");
@@ -31,7 +31,7 @@ public class CadastrarCasa {
 		if (CasaController.cadastrar(casa)) {
 			System.out.println("\n Casa cadastrada com sucesso!");
 		} else {
-			System.out.println("\n Essa casa j√° existe");
+			System.out.println("\n Essa casa j· existe");
 		}
 	}
 

@@ -11,6 +11,6 @@ public class DeletarCliente {
 		if (ClienteController.deletar(sc.next())) {
 			System.out.println("\n Cliente deletado com sucesso!");
 		} else
-			System.out.println("\nCliente solicitado n√£o existe");
+			System.out.println("\nCliente solicitado n„o existe");
 	}
 }

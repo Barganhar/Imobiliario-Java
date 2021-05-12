@@ -12,6 +12,6 @@ public class DeletarCasa {
 				System.out.println("\n Casa deletada com sucesso!");
 			}
 			else 
-				System.out.println("\nCasa solicitada n√£o existe");
+				System.out.println("\nCasa solicitada n„o existe");
 		}
 }
