@@ -3,13 +3,48 @@ package models;
 import java.util.Date;
 
 public class Cliente {
-
+	
 	public Cliente() {
-		this.criadoEm = new Date();
+		setCriadoEm(new Date());
 	}
 
-	private Date criadoEm;
-	private Pessoa pessoa;
+	private String nome;
+	private String cpf;
+	private String email;
+	private Float salario;
+	private String garantia;
+	public Date criadoEm;
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Float getSalario() {
+		return salario;
+	}
+	public void setSalario(Float salario) {
+		this.salario = salario;
+	}
+	public String getGarantia() {
+		return garantia;
+	}
+	public void setGarantia(String garantia) {
+		this.garantia = garantia;
+	}
 
 	public Date getCriadoEm() {
 		return criadoEm;
@@ -19,19 +54,11 @@ public class Cliente {
 		this.criadoEm = criadoEm;
 	}
 	
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-	}
 
 	@Override
 	public String toString() {
-		return pessoa + " | Criado em: " + criadoEm;
+		return "Nome: " + nome + " | CPF: " + cpf + " | Email: " + email + " | Salario: " + salario + " | Garantia: " + garantia + " | Date: " + criadoEm;
 	}
 
 }
-
 	
