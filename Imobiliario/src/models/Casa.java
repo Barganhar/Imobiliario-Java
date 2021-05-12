@@ -7,12 +7,11 @@ public class Casa {
 		setCriadoEm(new Date());
 	}
 	
-	public Casa(String nome, String endereco, String cep, double valor, String corretor) {
+	public Casa(String nome, String endereco, String cep, double valor) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cep = cep;
 		this.valor = valor;
-		this.corretor = corretor;
 	}
 	
 	private String nome;
@@ -48,14 +47,6 @@ public class Casa {
 		this.valor = valor;
 	}
 
-	public String getCorretor() {
-		return corretor;
-	}
-
-	public void setCorretor(String corretor) {
-		this.corretor = corretor;
-	}
-
 	public Date getCriadoEm() {
 		return criadoEm;
 	}
@@ -67,12 +58,11 @@ public class Casa {
 	private String endereco;
 	private String cep;
 	private Double valor;
-	private String corretor;	
 	private Date criadoEm;
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | Endereço: " + endereco + " | Cep: " + cep + " | Valor: " + valor + " | Corretor: " + corretor + " |  Criado em: " + criadoEm;
+		return "Nome: " + nome + " | Endereï¿½o: " + endereco + " | Cep: " + cep + " | Valor: " + valor  + " |  Criado em: " + criadoEm;
 	}
 	
 }

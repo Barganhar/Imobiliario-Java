@@ -29,4 +29,12 @@ public class CorretorController {
 		return null;
 	}
 	
+	public static Boolean deletar(String cpf) {
+		Corretor corretor = buscarPorCpf(cpf);
+		if(corretor != null) {
+			corretores.remove(corretor);
+			return true;
+		}
+		return false;
+	}
 }
