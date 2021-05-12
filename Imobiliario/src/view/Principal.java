@@ -134,8 +134,6 @@ public class Principal {
 						System.out.println("2 - Cadastrar aluguel");
 						System.out.println("3 - Listar venda");
 						System.out.println("4 - Listar aluguel");
-						System.out.println("5 - Deletar venda");
-						System.out.println("6 - Deletar aluguel");
 						System.out.println("0 - Voltar");
 						System.out.println("\nDigite a opção desejada: ");
 						opcao = sc.nextInt();
@@ -148,16 +146,10 @@ public class Principal {
 								CadastrarAluguel.renderizar();
 								break;
 							case 3:
-								// ListarVenda.renderizar();
+								ListarVenda.renderizar();
 								break;
 							case 4:
 								ListarAluguel.renderizar();
-								break;
-							case 5:
-								// DeletarVenda.renderizar();
-								break;
-							case 6:
-								// DeletarAluguel.renderizar();
 								break;
 							case 0:
 								System.out.println("Voltando...");

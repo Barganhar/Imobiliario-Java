@@ -11,7 +11,7 @@ public class Venda {
 	public Cliente cliente;
 	public Casa casa;
 	public Corretor corretor;
-	public String venda;
+	public String nome;
 	public Date criadoEm;
 
 	public Cliente getCliente() {
@@ -38,12 +38,12 @@ public class Venda {
 		this.corretor = corretor;
 	}
 
-	public String getVenda() {
-		return venda;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setVenda(String venda) {
-		this.venda = venda;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Date getCriadoEm() {
@@ -56,6 +56,6 @@ public class Venda {
 
 	@Override
 	public String toString() {
-		return "\n\nCliente: " + cliente + " | Casa: " + casa + " | Corretor: " + corretor + " | Venda: " + venda;
+		return "\n\nCliente: " + cliente + " | Casa: " + casa + " | Corretor: " + corretor + " | Nome: " + nome;
 	}
 }

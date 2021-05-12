@@ -12,29 +12,20 @@ public class VendaController {
         return vendas;
     }
 
-    public static boolean cadastrar(Venda aluguel) {
-        if (buscarPorVenda(aluguel.getVenda()) == null) {
-            vendas.add(aluguel);
+    public static boolean cadastrar(Venda venda) {
+        if (buscarPorNome(venda.getNome()) == null) {
+            vendas.add(venda);
             return true;
         }
         return false;
     }
 
-    public static Venda buscarPorVenda(String Venda) {
-        for (Venda vendaCadastrado : vendas) {
-            if (vendaCadastrado.getVenda().equals(Venda)) {
-                return vendaCadastrado;
+    public static Venda buscarPorNome(String Nome) {
+        for (Venda vendaCadastrada : vendas) {
+            if (vendaCadastrada.getNome().equals(Nome)) {
+                return vendaCadastrada;
             }
         }
         return null;
-    }
-
-    public static Boolean deletar(String casa) {
-        Venda venda = buscarPorVenda(casa);
-        if (venda != null) {
-            vendas.remove(venda);
-            return true;
-        }
-        return false;
     }
 }

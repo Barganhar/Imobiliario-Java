@@ -11,7 +11,7 @@ public class Aluguel {
 	public Cliente cliente;
 	public Casa casa;
 	public Corretor corretor;
-	public String aluguel;
+	public String nome;
 	public Date criadoEm;
 
 	public Cliente getCliente() {
@@ -38,12 +38,12 @@ public class Aluguel {
 		this.corretor = corretor;
 	}
 
-	public String getAluguel() {
-		return aluguel;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setAluguel(String aluguel) {
-		this.aluguel = aluguel;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Date getCriadoEm() {
@@ -56,6 +56,6 @@ public class Aluguel {
 
 	@Override
 	public String toString() {
-		return "\n\nCliente: " + cliente + " | Casa: " + casa + " | Corretor: " + corretor + " | Aluguel: " + aluguel;
+		return "\n\nCliente: " + cliente + " | Casa: " + casa + " | Corretor: " + corretor + " | Nome: " + nome;
 	}
 }

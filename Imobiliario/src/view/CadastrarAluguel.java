@@ -32,7 +32,7 @@ public class CadastrarAluguel {
 
 			System.out.println("\nInforme o CPF do corretor: ");
 			corretor = CorretorController.buscarPorCpf(sc.next());
-			if (cliente != null) {
+			if (corretor != null) {
 				aluguel.setCorretor(corretor);
 
 				System.out.println("\nInforme o Nome da casa: ");

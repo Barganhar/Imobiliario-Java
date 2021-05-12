@@ -13,28 +13,19 @@ public class AluguelController {
 	}
 
 	public static boolean cadastrar(Aluguel aluguel) {
-		if (buscarPorAluguel(aluguel.getAluguel()) == null) {
+		if (buscarPorNome(aluguel.getNome()) == null) {
 			alugueis.add(aluguel);
 			return true;
 		}
 		return false;
 	}
 
-	public static Aluguel buscarPorAluguel(String Aluguel) {
+	public static Aluguel buscarPorNome(String Nome) {
 		for (Aluguel aluguelCadastrado : alugueis) {
-			if (aluguelCadastrado.getAluguel().equals(Aluguel)) {
+			if (aluguelCadastrado.getNome().equals(Nome)) {
 				return aluguelCadastrado;
 			}
 		}
 		return null;
-	}
-
-	public static Boolean deletar(String casa) {
-		Aluguel aluguel = buscarPorAluguel(casa);
-		if (aluguel != null) {
-			alugueis.remove(aluguel);
-			return true;
-		}
-		return false;
 	}
 }
