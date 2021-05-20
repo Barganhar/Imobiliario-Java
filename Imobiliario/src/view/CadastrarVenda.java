@@ -41,7 +41,7 @@ public class CadastrarVenda {
 					String nome = casa.getNome();
 					// String valor = casa.getValor();
 
-					System.out.println("\nAlugar a casa: \nCasa: " + nome);
+					System.out.println("\nVender a casa: \nCasa: " + nome);
 					// + " | Valor: " + valor
 
 					venda.setCasa(casa);
@@ -50,15 +50,15 @@ public class CadastrarVenda {
 					System.out.println("\nVenda concluido");
 
 				} else {
-					System.out.println("N√£o h√° casas disponiveis");
+					System.out.println("N„o h· casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente n√£o encontrado");
+				System.out.println("\nCliente n„o encontrado");
 			}
 
 		} else {
-			System.out.println("\nCliente n√£o encontrado");
+			System.out.println("\nCliente n„o encontrado");
 		}
 
 	}

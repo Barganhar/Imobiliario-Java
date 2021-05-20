@@ -12,7 +12,7 @@ public class AlterarCorretor {
 		String cpf = sc.next();
 		if(CorretorController.buscarPorCpf(cpf) != null) {
 			do{
-			System.out.println("\nSELECIONE A OPCAO DESEJADA PARA ALTERAR");
+			System.out.println("\nSELECIONE A OP«√O DESEJADA PARA ALTERAR");
 			System.out.println("\n1- Nome"
 					+ "			\n2- CPF"
 					+ "			\n0- VOLTAR\n");
@@ -30,7 +30,7 @@ public class AlterarCorretor {
 				break;
 			
 			default:
-				System.out.println("\nOp√ß√£o inexistente!");
+				System.out.println("\nOpÁ„o inexistente!");
 				break;
 			}
 			if(op != 0)
@@ -41,6 +41,6 @@ public class AlterarCorretor {
 			System.out.println("\nAlterado com sucesso!\n");
 		}
 		else 
-			System.out.println("\nCliente n√£o encontrado");
+			System.out.println("\nCliente n„o encontrado");
 	}
 }

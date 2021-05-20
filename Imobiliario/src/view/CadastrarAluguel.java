@@ -50,15 +50,15 @@ public class CadastrarAluguel {
 					System.out.println("\nAluguel concluido");
 
 				} else {
-					System.out.println("N√£o h√° casas disponiveis");
+					System.out.println("N„o h· casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente n√£o encontrado");
+				System.out.println("\nCliente n„o encontrado");
 			}
 
 		} else {
-			System.out.println("\nCliente n√£o encontrado");
+			System.out.println("\nCliente n„o encontrado");
 		}
 
 	}

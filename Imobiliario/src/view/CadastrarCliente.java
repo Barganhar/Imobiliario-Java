@@ -23,11 +23,9 @@ public class CadastrarCliente {
         System.out.println("\nEmail: ");
         cliente.setEmail(sc.next());
 
-        // OBSERVAï¿½ï¿½O AQUI POIS ï¿½ FLOAT
-        System.out.println("\nSalÃ¡rio: ");
+        System.out.println("\nSalario: ");
         cliente.setSalario(sc.nextFloat());
 
-        // OBSERVAï¿½ï¿½O AQUI POIS ï¿½ BOOLEANO
         System.out.println("\nPossui forma de garantia? (S/N)");
         cliente.setGarantia(sc.next());
 

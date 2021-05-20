@@ -12,9 +12,9 @@ public class AlterarCasa {
 		String nome = sc.next(); 
 		if(CasaController.buscarPorNome(nome) != null) {
 			do{
-			System.out.println("\nSELECIONE A OPCAO DESEJADA PARA ALTERAR");
+			System.out.println("\nSELECIONE A OP«√O DESEJADA PARA ALTERAR");
 			System.out.println("\n1- Nome"
-					+ "			\n2- Endere√ßo"
+					+ "			\n2- EndereÁo"
 					+ "			\n3- CEP"
 					+ "			\n4- Valor"
 					+ "			\n0- VOLTAR\n");
@@ -25,7 +25,7 @@ public class AlterarCasa {
 				break;
 				
 			case 2:
-				System.out.println("\nInsira um novo endere√ßo:");
+				System.out.println("\nInsira um novo endereÁo:");
 				break;
 
 			case 3:
@@ -41,7 +41,7 @@ public class AlterarCasa {
 				break;
 			
 			default:
-				System.out.println("\nOp√ß√£o inexistente!");
+				System.out.println("\nOpÁ„o inexistente!");
 				break;
 			}
 			if(op!=0 && op!= 4)
@@ -52,6 +52,6 @@ public class AlterarCasa {
 			System.out.println("\nAlterado com sucesso!\n");
 		}
 		else 
-			System.out.println("\nCasa n√£o encontrada");
+			System.out.println("\nCasa n„o encontrada");
 	}
 }
