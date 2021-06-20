@@ -17,6 +17,7 @@ public class CadastrarAluguel {
 	private static Aluguel aluguel;
 	private static Scanner sc = new Scanner(System.in);
 	private static Corretor corretor;
+	private static ClienteController controller = ClienteController.retornarInstancia();
 
 	public static void renderizar() {
 		System.out.println("\n---------- Efetuar Aluguel ----------");
@@ -26,7 +27,8 @@ public class CadastrarAluguel {
 		corretor = new Corretor();
 
 		System.out.println("\nInforme o CPF do cliente: ");
-		cliente = ClienteController.buscarPorCpf(sc.next());
+		ClienteController controller2 = new ClienteController();
+		cliente = controller2.buscarPorCpf(sc.next());
 		if (cliente != null) {
 			aluguel.setCliente(cliente);
 
@@ -36,7 +38,8 @@ public class CadastrarAluguel {
 				aluguel.setCorretor(corretor);
 
 				System.out.println("\nInforme o Nome da casa: ");
-				casa = CasaController.buscarPorNome(sc.next());
+				CasaController controller = new CasaController();
+				casa = controller.buscarPorNome(sc.next());
 				if (casa != null) {
 					String nome = casa.getNome();
 					// String valor = casa.getValor();
@@ -50,15 +53,15 @@ public class CadastrarAluguel {
 					System.out.println("\nAluguel concluido");
 
 				} else {
-					System.out.println("Não há casas disponiveis");
+					System.out.println("Nï¿½o hï¿½ casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente não encontrado");
+				System.out.println("\nCliente nï¿½o encontrado");
 			}
 
 		} else {
-			System.out.println("\nCliente não encontrado");
+			System.out.println("\nCliente nï¿½o encontrado");
 		}
 
 	}

@@ -18,7 +18,7 @@ public class Principal {
 			System.out.println("3 - Corretor");
 			System.out.println("4 - Negocios");
 			System.out.println("5 - Sair");
-			System.out.println("\nDigite a opção desejada: ");
+			System.out.println("\nDigite a opï¿½ï¿½o desejada: ");
 			opcao = sc.nextInt();
 
 			switch (opcao) {
@@ -30,7 +30,7 @@ public class Principal {
 						System.out.println("3 - Alterar cliente");
 						System.out.println("4 - Deletar cliente");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
+						System.out.println("\nDigite a opï¿½ï¿½o desejada: ");
 						opcao = sc.nextInt();
 
 						switch (opcao) {
@@ -50,7 +50,7 @@ public class Principal {
 								System.out.println("Voltando...");
 								break;
 							default:
-								System.out.println("Opção invalida!");
+								System.out.println("OpÃ§Ã£o invalida!");
 								break;
 						}
 					} while (opcao != 0);
@@ -65,7 +65,7 @@ public class Principal {
 						System.out.println("3 - Alterar casa");
 						System.out.println("4 - Deletar casa");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
+						System.out.println("\nDigite a opÃ§Ã£o desejada: ");
 						opcao = sc.nextInt();
 
 						switch (opcao) {
@@ -85,7 +85,7 @@ public class Principal {
 								System.out.println("Voltando...");
 								break;
 							default:
-								System.out.println("Opção invalida!");
+								System.out.println("OpÃ§Ã£o invalida!");
 								break;
 						}
 					} while (opcao != 0);
@@ -100,7 +100,7 @@ public class Principal {
 						System.out.println("3 - Alterar corretor");
 						System.out.println("4 - Deletar corretor");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
+						System.out.println("\nDigite a opÃ§Ã£o desejada: ");
 						opcao = sc.nextInt();
 
 						switch (opcao) {
@@ -120,7 +120,7 @@ public class Principal {
 								System.out.println("Voltando...");
 								break;
 							default:
-								System.out.println("Opção invalida!");
+								System.out.println("OpÃ§Ã£o invalida!");
 								break;
 						}
 					} while (opcao != 0);
@@ -130,10 +130,13 @@ public class Principal {
 						System.out.println("\n-- MENU NEGOCIOS --");
 						System.out.println("\n1 - Cadastrar venda");
 						System.out.println("2 - Cadastrar aluguel");
-						System.out.println("3 - Listar venda");
-						System.out.println("4 - Listar aluguel");
+						System.out.println("3 - DevoluÃ§Ã£o aluguel");
+						System.out.println("4 - Listar venda");
+						System.out.println("5 - Listar aluguel");
+						System.out.println("6 - Total de venda");
+						System.out.println("7 - Total de aluguel");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
+						System.out.println("\nDigite a opÃ§Ã£o desejada: ");
 						opcao = sc.nextInt();
 
 						switch (opcao) {
@@ -144,16 +147,25 @@ public class Principal {
 								CadastrarAluguel.renderizar();
 								break;
 							case 3:
-								ListarVenda.renderizar();
+								DevolucaoAluguel.renderizar();
 								break;
 							case 4:
+								ListarVenda.renderizar();
+								break;
+							case 5:
 								ListarAluguel.renderizar();
+								break;
+							case 6:
+								TotalVenda.renderizar();
+								break;
+							case 7:
+								TotalAluguel.renderizar();
 								break;
 							case 0:
 								System.out.println("Voltando...");
 								break;
 							default:
-								System.out.println("Opção invalida!");
+								System.out.println("OpÃ§Ã£o invalida!");
 								break;
 						}
 					} while (opcao != 0);
@@ -163,7 +175,7 @@ public class Principal {
 					break;
 
 				default:
-					System.out.println("Opção invalida!");
+					System.out.println("OpÃ§Ã£o invalida!");
 					break;
 			}
 		} while (opcao != 5);

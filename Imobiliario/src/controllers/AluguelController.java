@@ -28,4 +28,13 @@ public class AluguelController {
 		}
 		return null;
 	}
+
+	public static Boolean deletar(String nome) {
+		Aluguel aluguel = buscarPorNome(nome);
+		if (aluguel != null) {
+			alugueis.remove(aluguel);
+			return true;
+		}
+		return false;
+	}
 }

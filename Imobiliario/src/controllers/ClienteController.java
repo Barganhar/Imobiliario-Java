@@ -1,59 +1,76 @@
 package controllers;
 
 import java.util.ArrayList;
-
+import view.ICliente;
 import models.Cliente;
 
-public class ClienteController {
+public class ClienteController implements ICliente {
 
-	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>(); 
+	private static ClienteController controller;
 
-	public static ArrayList<Cliente> listar() {
+	public static ClienteController retornarInstancia() {
+		if (controller == null) {
+			controller = new ClienteController();
+		}
+		return controller;
+	}
+
+	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+
+	@Override
+	public ArrayList<Cliente> listar() {
 		return clientes;
 	}
 
-	public static boolean cadastrar(Cliente cliente) {
-		if(buscarPorCpf(cliente.getCpf()) == null) {
-			clientes.add(cliente);
-			return true;
+	@Override
+	public boolean cadastrar(Cliente cliente) {
+		for (Cliente clienteCadastrada : clientes) {
+			if (clienteCadastrada.getNome().equals(cliente.getNome())) {
+				return false;
+			}
 		}
-		return false;
-	}	
+		clientes.add(cliente);
+		return true;
+	}
 
-	public static Cliente buscarPorCpf(String cpf) {
-		for(Cliente clienteCadastrado : clientes) {
-			if(clienteCadastrado.getCpf().equals(cpf)) {
+	@Override
+	public Cliente buscarPorCpf(String cpf) {
+		for (Cliente clienteCadastrado : clientes) {
+			if (clienteCadastrado.getCpf().equals(cpf)) {
 				return clienteCadastrado;
 			}
-		}	
+		}
 		return null;
 	}
-	
-	public static Boolean deletar(String cpf) {
+
+	@Override
+	public Boolean deletar(String cpf) {
 		Cliente cliente = buscarPorCpf(cpf);
-		if(cliente != null) {
+		if (cliente != null) {
 			clientes.remove(cliente);
 			return true;
 		}
 		return false;
 	}
 
-	public static void alterar(String cpf, int op, String newValue) {
+	@Override
+	public void alterar(String cpf, int op, String newValue) {
 		Cliente cliente = buscarPorCpf(cpf);
-		if(op==1)
+		if (op == 1)
 			cliente.setNome(newValue);
-		if(op==2)
+		if (op == 2)
 			cliente.setCpf(newValue);
-		if(op==3)
+		if (op == 3)
 			cliente.setEmail(newValue);
-		if(op==5)
+		if (op == 5)
 			cliente.setGarantia(newValue);
 	}
 
-	public static void alterar(String cpf, int op, Float newValue) {
+	@Override
+	public void alterar(String cpf, int op, Float newValue) {
 		Cliente cliente = buscarPorCpf(cpf);
-		if(op==4)
+		if (op == 4)
 			cliente.setSalario(newValue);
-		
+
 	}
 }

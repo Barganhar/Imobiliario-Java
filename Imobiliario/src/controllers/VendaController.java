@@ -28,4 +28,12 @@ public class VendaController {
         }
         return null;
     }
+
+    public static Venda numero() {
+
+    }
+
+    public static Venda valor() {
+
+    }
 }

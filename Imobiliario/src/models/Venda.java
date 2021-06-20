@@ -2,7 +2,7 @@ package models;
 
 import java.util.Date;
 
-public class Venda {
+public class Venda extends Comercio {
 
 	public Venda() {
 		setCriadoEm(new Date());

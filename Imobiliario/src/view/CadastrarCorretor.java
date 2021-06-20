@@ -9,6 +9,7 @@ import models.Corretor;
 public class CadastrarCorretor {
 
 	private static Scanner sc = new Scanner(System.in);
+	private static CorretorController controller = CorretorController.retornarInstancia();
 	private static Corretor corretor;
 	private static ArrayList<Corretor> corretores;;
 
@@ -24,7 +25,7 @@ public class CadastrarCorretor {
 		System.out.println("\nCPF: ");
 		corretor.setCpf(sc.next());
 
-		if (CorretorController.cadastrar(corretor)) {
+		if (controller.cadastrar(corretor)) {
 			System.out.println("Corretor cadastrado com sucesso!");
 		} else {
 			System.out.println("Esse corretor ja existe");

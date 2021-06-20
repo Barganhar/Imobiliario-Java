@@ -1,48 +1,65 @@
 package controllers;
 
 import java.util.ArrayList;
-
+import view.ICorretor;
 import models.Corretor;
 
-public class CorretorController {
+public class CorretorController implements ICorretor {
 
-	private static ArrayList<Corretor> corretores = new ArrayList<Corretor>(); 
+	private static CorretorController controller;
 
-	public static ArrayList<Corretor> listar() {
+	public static CorretorController retornarInstancia() {
+		if (controller == null) {
+			controller = new CorretorController();
+		}
+		return controller;
+	}
+
+	private static ArrayList<Corretor> corretores = new ArrayList<Corretor>();
+
+	@Override
+	public ArrayList<Corretor> listar() {
 		return corretores;
 	}
 
-	public static boolean cadastrar(Corretor corretor) {
-		if(buscarPorCpf(corretor.getCpf()) == null) {
-			corretores.add(corretor);
-			return true;
+	@Override
+	public boolean cadastrar(Corretor corretor) {
+		for (Corretor corretorCadastrada : corretores) {
+			if (corretorCadastrada.getCpf().equals(corretor.getNome())) {
+				return false;
+			}
 		}
-		return false;
-	}	
+		corretores.add(corretor);
+		return true;
+	}
 
-	public static Corretor buscarPorCpf(String cpf) {
-		for(Corretor corretorCadastrado : corretores) {
-			if(corretorCadastrado.getCpf().equals(cpf)) {
+	@Override
+	public Corretor buscarPorCpf(String cpf) {
+		for (Corretor corretorCadastrado : corretores) {
+			if (corretorCadastrado.getCpf().equals(cpf)) {
 				return corretorCadastrado;
 			}
-		}	
+		}
 		return null;
 	}
-	
-	public static Boolean deletar(String cpf) {
+
+	@Override
+	public Boolean deletar(String cpf) {
 		Corretor corretor = buscarPorCpf(cpf);
-		if(corretor != null) {
+		if (corretor != null) {
 			corretores.remove(corretor);
 			return true;
 		}
 		return false;
 	}
 
-	public static void alterar(String cpf, int op, String newValue) {
+	@Override
+	public void alterar(String cpf, int op, String newValue) {
 		Corretor corretor = buscarPorCpf(cpf);
-		if(op==1)
+		if (op == 1)
 			corretor.setNome(newValue);
-		if(op==2)
+		if (op == 2)
 			corretor.setCpf(newValue);
 	}
+
 }

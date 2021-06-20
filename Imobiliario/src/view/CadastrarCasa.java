@@ -7,6 +7,7 @@ import controllers.CasaController;
 public class CadastrarCasa {
 
 	private static Scanner sc = new Scanner(System.in);
+	private static CasaController controller = CasaController.retornarInstancia();
 	private static Casa casa;
 
 	public static void renderizar() {// public static Casa renderizar
@@ -17,7 +18,7 @@ public class CadastrarCasa {
 		System.out.println("\nNome atribuido a casa: ");
 		casa.setNome(sc.next());
 
-		System.out.println("\nEndereço: ");
+		System.out.println("\nEndereï¿½o: ");
 		casa.setEndereco(sc.next());
 
 		System.out.println("\nCEP: ");
@@ -27,11 +28,10 @@ public class CadastrarCasa {
 		casa.setValor(sc.nextDouble());// estava como float
 
 		// return casa;
-
-		if (CasaController.cadastrar(casa)) {
+		if (controller.cadastrar(casa)) {
 			System.out.println("\n Casa cadastrada com sucesso!");
 		} else {
-			System.out.println("\n Essa casa já existe");
+			System.out.println("\n Essa casa jï¿½ existe");
 		}
 	}
 

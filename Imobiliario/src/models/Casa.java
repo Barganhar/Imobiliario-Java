@@ -1,20 +1,26 @@
 package models;
+
 import java.util.Date;
 
 public class Casa {
-	
+
 	public Casa() {
 		setCriadoEm(new Date());
 	}
-	
+
 	public Casa(String nome, String endereco, String cep, double valor) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cep = cep;
 		this.valor = valor;
 	}
-	
+
 	private String nome;
+	private String endereco;
+	private String cep;
+	private Double valor;
+	private Date criadoEm;
+
 	public String getNome() {
 		return nome;
 	}
@@ -55,14 +61,10 @@ public class Casa {
 		this.criadoEm = criadoEm;
 	}
 
-	private String endereco;
-	private String cep;
-	private Double valor;
-	private Date criadoEm;
-
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | Endereço: " + endereco + " | Cep: " + cep + " | Valor: " + valor  + " |  Criado em: " + criadoEm;
+		return "Nome: " + nome + " | Endereï¿½o: " + endereco + " | Cep: " + cep + " | Valor: " + valor
+				+ " |  Criado em: " + criadoEm;
 	}
-	
+
 }

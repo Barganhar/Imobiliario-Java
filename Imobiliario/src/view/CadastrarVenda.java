@@ -26,7 +26,8 @@ public class CadastrarVenda {
 		corretor = new Corretor();
 
 		System.out.println("\nInforme o CPF do cliente: ");
-		cliente = ClienteController.buscarPorCpf(sc.next());
+		ClienteController controller2 = new ClienteController();
+		cliente = controller2.buscarPorCpf(sc.next());
 		if (cliente != null) {
 			venda.setCliente(cliente);
 
@@ -36,7 +37,8 @@ public class CadastrarVenda {
 				venda.setCorretor(corretor);
 
 				System.out.println("\nInforme o Nome da casa: ");
-				casa = CasaController.buscarPorNome(sc.next());
+				CasaController controller = new CasaController();
+				casa = controller.buscarPorNome(sc.next());
 				if (casa != null) {
 					String nome = casa.getNome();
 					// String valor = casa.getValor();
@@ -50,15 +52,15 @@ public class CadastrarVenda {
 					System.out.println("\nVenda concluido");
 
 				} else {
-					System.out.println("Não há casas disponiveis");
+					System.out.println("Nï¿½o hï¿½ casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente não encontrado");
+				System.out.println("\nCliente nï¿½o encontrado");
 			}
 
 		} else {
-			System.out.println("\nCliente não encontrado");
+			System.out.println("\nCliente nï¿½o encontrado");
 		}
 
 	}
