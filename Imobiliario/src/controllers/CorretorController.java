@@ -6,13 +6,13 @@ import models.Corretor;
 
 public class CorretorController implements ICorretor {
 
-	private static CorretorController controller;
+	private static CorretorController controllerCorretor;
 
 	public static CorretorController retornarInstancia() {
-		if (controller == null) {
-			controller = new CorretorController();
+		if (controllerCorretor == null) {
+			controllerCorretor = new CorretorController();
 		}
-		return controller;
+		return controllerCorretor;
 	}
 
 	private static ArrayList<Corretor> corretores = new ArrayList<Corretor>();

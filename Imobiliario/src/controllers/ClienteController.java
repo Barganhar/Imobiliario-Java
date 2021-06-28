@@ -6,13 +6,13 @@ import models.Cliente;
 
 public class ClienteController implements ICliente {
 
-	private static ClienteController controller;
+	private static ClienteController controllerCliente;
 
 	public static ClienteController retornarInstancia() {
-		if (controller == null) {
-			controller = new ClienteController();
+		if (controllerCliente == null) {
+			controllerCliente = new ClienteController();
 		}
-		return controller;
+		return controllerCliente;
 	}
 
 	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();

@@ -40,7 +40,7 @@ public class AlterarCasa {
 						break;
 
 					default:
-						System.out.println("\nOp��o inexistente!");
+						System.out.println("\nOpção inexistente!");
 						break;
 				}
 				if (op != 0 && op != 4)
@@ -50,6 +50,6 @@ public class AlterarCasa {
 
 			System.out.println("\nAlterado com sucesso!\n");
 		} else
-			System.out.println("\nCasa n�o encontrada");
+			System.out.println("\nCasa não encontrada");
 	}
 }

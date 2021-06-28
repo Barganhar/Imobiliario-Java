@@ -3,37 +3,28 @@ package controllers;
 import java.util.ArrayList;
 
 import models.Venda;
+import view.IVenda;
 
-public class VendaController {
+public class VendaController implements IVenda {
 
-    private static ArrayList<Venda> vendas = new ArrayList<Venda>();
+    private static VendaController controller;
 
-    public static ArrayList<Venda> listar() {
-        return vendas;
-    }
+	public static VendaController retornarInstancia() {
+		if (controller == null) {
+			controller = new VendaController();
+		}
+		return controller;
+	}
 
-    public static boolean cadastrar(Venda venda) {
-        if (buscarPorNome(venda.getNome()) == null) {
-            vendas.add(venda);
-            return true;
-        }
-        return false;
-    }
+	private ArrayList<Venda> alugueis = new ArrayList<Venda>();
 
-    public static Venda buscarPorNome(String Nome) {
-        for (Venda vendaCadastrada : vendas) {
-            if (vendaCadastrada.getNome().equals(Nome)) {
-                return vendaCadastrada;
-            }
-        }
-        return null;
-    }
-
-    public static Venda numero() {
-
-    }
-
-    public static Venda valor() {
-
-    }
+	@Override
+	public Venda buscarPorNome(String Nome) {
+		for (Venda vendasCadastrado : alugueis) {
+			if (vendasCadastrado.getNomeComprador().equals(Nome)) {
+				return vendasCadastrado;
+			}
+		}
+		return null;
+	}
 }

@@ -15,7 +15,7 @@ public class Console {
                 valor = Integer.parseInt(sc.next());
                 valorLido = true;
             } catch (NumberFormatException e) {
-                System.out.println("\nApenas n�meros\n");
+                System.out.println("\nApenas números\n");
             }
         } while (!valorLido);
         return valor;

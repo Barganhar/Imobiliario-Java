@@ -1,15 +1,20 @@
 package view;
 
-import controllers.VendaController;
+import controllers.ComercioController;
+import models.Comercio;
 import models.Venda;
 
 public class ListarVenda {
+
+    private static ComercioController controller = ComercioController.retornarInstancia();
+
     public static void renderizar() {
         System.out.println("\n".repeat(20));
         System.out.println("\n -- LISTAR VENDA -- \n");
-        for (Venda vendaCadastrada : VendaController.listar()) {
-            System.out.println(vendaCadastrada);
-        }
+        for(Comercio comercioCadastrada : controller.listar()) {
+			if(comercioCadastrada instanceof Venda)
+				System.out.println(comercioCadastrada);
+		} 
 
     }
 }

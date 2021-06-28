@@ -3,38 +3,28 @@ package controllers;
 import java.util.ArrayList;
 
 import models.Aluguel;
+import view.IAluguel;
 
-public class AluguelController {
+public class AluguelController implements IAluguel {
 
-	private static ArrayList<Aluguel> alugueis = new ArrayList<Aluguel>();
+	private static AluguelController controller;
 
-	public static ArrayList<Aluguel> listar() {
-		return alugueis;
-	}
-
-	public static boolean cadastrar(Aluguel aluguel) {
-		if (buscarPorNome(aluguel.getNome()) == null) {
-			alugueis.add(aluguel);
-			return true;
+	public static AluguelController retornarInstancia() {
+		if (controller == null) {
+			controller = new AluguelController();
 		}
-		return false;
+		return controller;
 	}
 
-	public static Aluguel buscarPorNome(String Nome) {
+	private ArrayList<Aluguel> alugueis = new ArrayList<Aluguel>();
+
+	@Override
+	public Aluguel buscarPorNome(String Nome) {
 		for (Aluguel aluguelCadastrado : alugueis) {
-			if (aluguelCadastrado.getNome().equals(Nome)) {
+			if (aluguelCadastrado.getNomeInquilino().equals(Nome)) {
 				return aluguelCadastrado;
 			}
 		}
 		return null;
-	}
-
-	public static Boolean deletar(String nome) {
-		Aluguel aluguel = buscarPorNome(nome);
-		if (aluguel != null) {
-			alugueis.remove(aluguel);
-			return true;
-		}
-		return false;
 	}
 }

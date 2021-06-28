@@ -6,13 +6,13 @@ import models.Casa;
 
 public class CasaController implements ICasa {
 
-	private static CasaController controller;
+	private static CasaController controllerCasa;
 
 	public static CasaController retornarInstancia() {
-		if (controller == null) {
-			controller = new CasaController();
+		if (controllerCasa == null) {
+			controllerCasa = new CasaController();
 		}
-		return controller;
+		return controllerCasa;
 	}
 
 	private ArrayList<Casa> casas = new ArrayList<Casa>();
