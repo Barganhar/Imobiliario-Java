@@ -1,50 +1,10 @@
-// package controllers;
-
-// import java.util.ArrayList;
-
-// import models.Comercio;
-// import models.Circulo;
-// import models.Retangulo;
-// import models.Triangulo;
-
-// public class ComercioController {
-
-// 	private static ArrayList<Comercio> comercios = new ArrayList<Comercio>();
-//     private static ArrayList<Circulo> circulos = new ArrayList<Circulo>();
-//     private static ArrayList<Retangulo> retangulos = new ArrayList<Retangulo>();
-//     private static ArrayList<Triangulo> triangulos = new ArrayList<Triangulo>();
-
-// 	public static void cadastrar(Comercio comercio) {
-// 		comercios.add(comercio);
-
-//         if(comercio instanceof Retangulo){
-//             retangulos.add((Retangulo) comercio);
-//         }
-//         if(comercio instanceof Triangulo) {
-//             triangulos.add((Triangulo) comercio);
-//         } 
-//         if(comercio instanceof Circulo) {
-//             circulos.add((Circulo) comercio);
-//         }
-// 	}
-
-//     public static ArrayList<Comercio> listar() {
-// 		return comercios;
-// 	}
-
-//     public static ArrayList<Comercio> listarVenda() {
-// 		return comercios;
-// 	}
-
-//     public static ArrayList<Comercio> listarAluguel() {
-// 		return comercios;
-// 	}
-
 package controllers;
 
 import java.util.ArrayList;
 
+import models.Aluguel;
 import models.Comercio;
+import models.Venda;
 import view.IComercio;
 
 public class ComercioController implements IComercio {
@@ -59,32 +19,108 @@ public class ComercioController implements IComercio {
         return controllerComercio;
     }
 
-    private ArrayList<Comercio> comercios = new ArrayList<Comercio>();
+    private static ArrayList<Comercio> comercios = new ArrayList<Comercio>();
+    private static ArrayList<Venda> vendas = new ArrayList<Venda>();
+    private static ArrayList<Aluguel> alugueis = new ArrayList<Aluguel>();
 
-    @Override
     public boolean cadastrar(Comercio comercio) {
         for (Comercio comercioCadastrada : comercios) {
-            if (comercioCadastrada.getCliente().equals(comercio.getCliente())) {
+            if (comercioCadastrada.getCasa().equals(comercio.getCasa())) {
                 return false;
             }
         }
         comercios.add(comercio);
-        return true;
+        if (comercio instanceof Venda) {
+            vendas.add((Venda) comercio);
+            return true;
+        }
+        if (comercio instanceof Aluguel) {
+            alugueis.add((Aluguel) comercio);
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public Comercio buscarPorCliente(String cliente) {
+    public Comercio buscarPorCasa(String nome) {
         for (Comercio comercioCadastrada : comercios) {
-            if (comercioCadastrada.getCliente().equals(cliente)) {
+            if (comercioCadastrada.getNome().equals(nome)) {
                 return comercioCadastrada;
             }
         }
         return null;
     }
 
-    @Override
     public ArrayList<Comercio> listar() {
         return comercios;
     }
+
+    public ArrayList<Venda> listarVenda() {
+        return vendas;
+    }
+
+    public ArrayList<Aluguel> listarAluguel() {
+        return alugueis;
+    }
+
+    @Override
+    public Boolean deletar(String casa) {
+        Comercio comercio = buscarPorCasa(casa);
+        if (comercio != null) {
+            comercios.remove(comercio);
+            alugueis.remove(comercio);
+            return true;
+        }
+        return false;
+    }
+
+    // }
+
+    // package controllers;
+
+    // import java.util.ArrayList;
+
+    // import models.Comercio;
+    // import view.IComercio;
+
+    // public class ComercioController implements IComercio {
+
+    // // Singleton
+    // private static ComercioController controllerComercio;
+
+    // public static ComercioController retornarInstancia() {
+    // if (controllerComercio == null) {
+    // controllerComercio = new ComercioController();
+    // }
+    // return controllerComercio;
+    // }
+
+    // private ArrayList<Comercio> comercios = new ArrayList<Comercio>();
+
+    // @Override
+    // public boolean cadastrar(Comercio comercio) {
+    // for (Comercio comercioCadastrada : comercios) {
+    // if (comercioCadastrada.getCasa().equals(comercio.getCasa())) {
+    // return false;
+    // }
+    // }
+    // comercios.add(comercio);
+    // return true;
+    // }
+
+    // @Override
+    // public Comercio buscarPorTipo(String tipo) {
+    // for (Comercio comercioCadastrada : comercios) {
+    // if (comercioCadastrada.getTipo().equals(tipo)) {
+    // return comercioCadastrada;
+    // }
+    // }
+    // return null;
+    // }
+
+    // @Override
+    // public ArrayList<Comercio> listar() {
+    // return comercios;
+    // }
 
 }

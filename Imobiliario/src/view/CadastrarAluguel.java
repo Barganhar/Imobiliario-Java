@@ -30,6 +30,9 @@ public class CadastrarAluguel {
 		aluguel = new Aluguel();
 		corretor = new Corretor();
 
+		System.out.println("\nNome Inquilino: ");
+		aluguel.setNome(sc.next());
+
 		System.out.println("\nInforme o CPF do cliente: ");
 		cliente = controllerCliente.buscarPorCpf(sc.next());
 		if (cliente != null) {
@@ -51,20 +54,25 @@ public class CadastrarAluguel {
 
 					aluguel.setCasa(casa);
 
-					controllerComercio.cadastrar(aluguel);
-					System.out.println("\nAluguel concluido");
+					// seta tipo automatico
+					aluguel.setTipo("aluguel");
+
+					if (controllerComercio.cadastrar(aluguel)) {
+						System.out.println("\nAluguel cadastrado com sucesso!");
+					} else {
+						System.out.println("Essa casa não está disponivel!");
+					}
 
 				} else {
 					System.out.println("N�o h� casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente n�o encontrado");
+				System.out.println("\nCorretor não encontrado");
 			}
 
 		} else {
 			System.out.println("\nCliente n�o encontrado");
 		}
-
 	}
 }

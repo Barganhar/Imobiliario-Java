@@ -1,24 +1,20 @@
 package models;
 
-import java.util.Date;
-
 public abstract class Comercio {
-   
-    public Comercio() {
-		setCriadoEm(new Date());
+
+	private String nome;
+	private Casa casa;
+
+	public String toString() {
+		return toString() + " | Nome: " + nome + " | Casa: " + casa;
+	};
+
+	public String getNome() {
+		return nome;
 	}
 
-	public Cliente cliente;
-	public Casa casa;
-	public Corretor corretor;
-	public Date criadoEm;
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Casa getCasa() {
@@ -28,27 +24,5 @@ public abstract class Comercio {
 	public void setCasa(Casa casa) {
 		this.casa = casa;
 	}
-
-	public Corretor getCorretor() {
-		return corretor;
-	}
-
-	public void setCorretor(Corretor corretor) {
-		this.corretor = corretor;
-	}
-
-	public Date getCriadoEm() {
-		return criadoEm;
-	}
-
-	public void setCriadoEm(Date criadoEm) {
-		this.criadoEm = criadoEm;
-	}
-
-	@Override
-	public String toString() {
-		return super.toString()+  "\nCliente: " + cliente + " | Casa: " + casa + " | Corretor: " + corretor;
-	}
-
 
 }

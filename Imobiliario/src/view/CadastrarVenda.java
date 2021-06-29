@@ -30,6 +30,9 @@ public class CadastrarVenda {
 		venda = new Venda();
 		corretor = new Corretor();
 
+		System.out.println("\nNome Comprador: ");
+		venda.setNome(sc.next());
+
 		System.out.println("\nInforme o CPF do cliente: ");
 		cliente = controllerCliente.buscarPorCpf(sc.next());
 		if (cliente != null) {
@@ -51,8 +54,14 @@ public class CadastrarVenda {
 
 					venda.setCasa(casa);
 
-					controllerComercio.cadastrar(venda);
-					System.out.println("\nVenda concluido");
+					// seta tipo automatico
+					venda.setTipo("venda");
+
+					if (controllerComercio.cadastrar(venda)) {
+						System.out.println("\nVenda cadastrado com sucesso!");
+					} else {
+						System.out.println("Essa casa não esta disponivel!");
+					}
 
 				} else {
 					System.out.println("N�o h� casas disponiveis");

@@ -1,18 +1,22 @@
 package view;
 
-import controllers.AluguelController;
+import controllers.ComercioController;
 import models.Aluguel;
+import models.Comercio;
 
 public class TotalAluguel {
+
+    private static ComercioController controller = ComercioController.retornarInstancia();
+
     public static void renderizar() {
+        int contador = 0;
         System.out.println("\n".repeat(20));
-        System.out.println("\n -- Total de alguel -- \n");
-        for (Aluguel numeroCadastrada : AluguelController.numero()) {
-            System.out.println(numeroCadastrada);
+        System.out.println("\n -- LISTAR ALUGUEL -- \n");
+        for (Comercio comercioCadastrada : controller.listarAluguel()) {
+            if (comercioCadastrada instanceof Aluguel)
+                contador++;
         }
-        System.out.println("\n -- Valor total de aluguel -- \n");
-        for (Aluguel valorCadastrada : AluguelController.valor()) {
-            System.out.println(valorCadastrada);
-        }
+
+        System.out.println("contador: " + contador);
     }
 }

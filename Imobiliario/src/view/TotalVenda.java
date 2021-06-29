@@ -1,18 +1,21 @@
 package view;
 
-import controllers.VendaController;
+import controllers.ComercioController;
+import models.Comercio;
 import models.Venda;
 
 public class TotalVenda {
+    private static ComercioController controller = ComercioController.retornarInstancia();
+
     public static void renderizar() {
+        int contador = 0;
         System.out.println("\n".repeat(20));
-        System.out.println("\n -- Total de vendas -- \n");
-        for (Venda numeroVenda : VendaController.numero()) {
-            System.out.println(numeroVenda);
+        System.out.println("\n -- LISTAR VENDAS -- \n");
+        for (Comercio comercioCadastrada : controller.listarAluguel()) {
+            if (comercioCadastrada instanceof Venda)
+                contador++;
         }
-        System.out.println("\n -- Valor total de vendas -- \n");
-        for (Venda valorVenda : VendaController.valor()) {
-            System.out.println(valorVenda);
-        }
+
+        System.out.println("contador: " + contador);
     }
 }
