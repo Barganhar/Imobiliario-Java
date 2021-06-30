@@ -52,6 +52,10 @@ public class CadastrarAluguel {
 					// seta tipo automatico
 					aluguel.setTipo("aluguel");
 
+					Double valor = casa.getValor();
+
+					aluguel.setValor(valor);
+
 					if (controllerComercio.cadastrar(aluguel)) {
 						System.out.println("\nAluguel cadastrado com sucesso!");
 					} else {

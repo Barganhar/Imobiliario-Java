@@ -38,6 +38,6 @@ public class Corretor {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | CPF: " + cpf + "| Criado em: " + criadoEm;
+		return "Nome: " + nome + " | CPF: " + cpf + "| Criado em: " + criadoEm +"\n";
 	}
 }

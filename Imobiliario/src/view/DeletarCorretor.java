@@ -12,6 +12,6 @@ public class DeletarCorretor {
 		if (controller.deletar(sc.next())) {
 			System.out.println("\n Corretor deletado com sucesso!");
 		} else
-			System.out.println("\nCorretor solicitado n�o existe");
+			System.out.println("\nCorretor solicitado não existe");
 	}
 }

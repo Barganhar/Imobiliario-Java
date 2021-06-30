@@ -63,8 +63,8 @@ public class Casa {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Nome: " + nome + " | Endere�o: " + endereco + " | Cep: " + cep + " | Valor: " + valor
-				+ " |  Criado em: " + criadoEm;
+		return "Nome: " + nome + " | Endereço: " + endereco + " | Cep: " + cep + " | Valor: " + valor
+				+ " |  Criado em: " + criadoEm + "\n";
 	}
 
 }

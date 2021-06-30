@@ -4,9 +4,10 @@ public abstract class Comercio {
 
 	private String nome;
 	private Casa casa;
+	private Double valor;
 
 	public String toString() {
-		return toString() + " | Nome: " + nome + " | Casa: " + casa;
+		return toString() + " | Nome: " + nome + " | Casa: " + casa + " | Valor: " + valor;
 	};
 
 	public String getNome() {
@@ -23,6 +24,14 @@ public abstract class Comercio {
 
 	public void setCasa(Casa casa) {
 		this.casa = casa;
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 
 }

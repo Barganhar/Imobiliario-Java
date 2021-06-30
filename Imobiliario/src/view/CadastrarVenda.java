@@ -44,13 +44,17 @@ public class CadastrarVenda {
 					String nome = casa.getNome();
 					// String valor = casa.getValor();
 
-					System.out.println("\nAlugar a casa: \nCasa: " + nome);
+					System.out.println("\nVender a casa: \nCasa: " + nome);
 					// + " | Valor: " + valor
 
 					venda.setCasa(casa);
 
 					// seta tipo automatico
 					venda.setTipo("venda");
+
+					Double valor = casa.getValor();
+
+					venda.setValor(valor);
 
 					if (controllerComercio.cadastrar(venda)) {
 						System.out.println("\nVenda cadastrada com sucesso!");

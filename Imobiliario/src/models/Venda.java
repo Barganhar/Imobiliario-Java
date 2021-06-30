@@ -21,6 +21,7 @@ public class Venda extends Comercio {
     private Cliente cliente;
     private Corretor corretor;
     private String tipo;
+    private Casa casa;
 
     public String getTipo() {
         return tipo;
@@ -46,9 +47,19 @@ public class Venda extends Comercio {
         this.corretor = corretor;
     }
 
-    @Override
-    public String toString() {
-        return "\nCliente: " + cliente + " | Corretor: " + corretor + " | Data Venda: " + getCriadoEm();
+    public Casa getCasa() {
+        return casa;
     }
 
+    public void setCasa(Casa casa) {
+        this.casa = casa;
+    }
+
+    @Override
+    public String toString() {// + " valor: " + valor
+        return "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n"
+                + " Cliente: " + cliente + " Corretor: " + corretor + " Casa: " + casa + " Data Venda: " + getCriadoEm()
+                + "\n"
+                + "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+    };
 }

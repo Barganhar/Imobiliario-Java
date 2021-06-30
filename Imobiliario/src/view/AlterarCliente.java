@@ -14,7 +14,7 @@ public class AlterarCliente {
 		String cpf = sc.next();
 		if (controller.buscarPorCpf(cpf) != null) {
 			do {
-				System.out.println("\nSELECIONE A OP��O DESEJADA PARA ALTERAR");
+				System.out.println("\nSELECIONE A OPÇÃO DESEJADA PARA ALTERAR");
 				System.out.println("\n1- Nome" + "			\n2- CPF" + "			\n3- Email"
 						+ "			\n4- Salario" + "			\n5- Garantia" + "			\n0- VOLTAR\n");
 				op = sc.nextInt();
@@ -44,7 +44,7 @@ public class AlterarCliente {
 						break;
 
 					default:
-						System.out.println("\nOp��o inexistente!");
+						System.out.println("\nOpção inexistente!");
 						break;
 				}
 				if (op != 0 && op != 4)
@@ -54,6 +54,6 @@ public class AlterarCliente {
 
 			System.out.println("\nAlterado com sucesso!\n");
 		} else
-			System.out.println("\nCliente n�o encontrado");
+			System.out.println("\nCliente não encontrado");
 	}
 }
