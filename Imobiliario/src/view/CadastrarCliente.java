@@ -22,7 +22,7 @@ public class CadastrarCliente {
 
         cliente.setSalario(Console.lerFloat("\nSalario: "));
 
-        cliente.setGarantia(Console.lerString("\nPossui forma de garantia? (S/N)"));
+        cliente.setGarantia(Console.lerString("\nPossui forma de garantia? (SIM/NÃO)"));
 
         if (controller.cadastrar(cliente)) {
             System.out.println("Cliente cadastrado com sucesso!");

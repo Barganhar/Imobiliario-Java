@@ -28,46 +28,54 @@ public class CadastrarAluguel {
 		casa = new Casa();
 		aluguel = new Aluguel();
 		corretor = new Corretor();
+		String positivo = "SIM";
+		String garantia;
 
 		aluguel.setNome(Console.lerString("\nNome Inquilino: "));
 
 		cliente = controllerCliente.buscarPorCpf(Console.lerString("\nInforme o CPF do cliente: "));
 		if (cliente != null) {
-			aluguel.setCliente(cliente);
+			garantia = cliente.getGarantia();
+			if (garantia.equals(positivo)) {
+				aluguel.setCliente(cliente);
 
-			corretor = controllerCorretor.buscarPorCpf(Console.lerString("\nInforme o CPF do corretor: "));
-			if (corretor != null) {
-				aluguel.setCorretor(corretor);
+				corretor = controllerCorretor.buscarPorCpf(Console.lerString("\nInforme o CPF do corretor: "));
+				if (corretor != null) {
+					aluguel.setCorretor(corretor);
 
-				casa = controllerCasa.buscarPorNome(Console.lerString("\nInforme o Nome da casa: "));
-				if (casa != null) {
-					String nome = casa.getNome();
-					// String valor = casa.getValor();
+					casa = controllerCasa.buscarPorNome(Console.lerString("\nInforme o Nome da casa: "));
+					if (casa != null) {
+						String nome = casa.getNome();
+						// String valor = casa.getValor();
 
-					System.out.println("\nAlugar a casa: \nCasa: " + nome);
-					// + " | Valor: " + valor
+						System.out.println("\nAlugar a casa: \nCasa: " + nome);
+						// + " | Valor: " + valor
 
-					aluguel.setCasa(casa);
+						aluguel.setCasa(casa);
 
-					// seta tipo automatico
-					aluguel.setTipo("aluguel");
+						// seta tipo automatico
+						aluguel.setTipo("aluguel");
 
-					Double valor = casa.getValor();
+						Double valor = casa.getValor();
 
-					aluguel.setValor(valor);
+						aluguel.setValor(valor);
 
-					if (controllerComercio.cadastrar(aluguel)) {
-						System.out.println("\nAluguel cadastrado com sucesso!");
+						if (controllerComercio.cadastrar(aluguel)) {
+							System.out.println("\nAluguel cadastrado com sucesso!");
+						} else {
+							System.out.println("Essa casa não está disponivel!");
+						}
+
 					} else {
-						System.out.println("Essa casa não está disponivel!");
+						System.out.println("Não há casas disponiveis");
 					}
 
 				} else {
-					System.out.println("Não há casas disponiveis");
+					System.out.println("\nCorretor não encontrado");
 				}
 
 			} else {
-				System.out.println("\nCorretor não encontrado");
+				System.out.println("\nCliente sem Garantia");
 			}
 
 		} else {
