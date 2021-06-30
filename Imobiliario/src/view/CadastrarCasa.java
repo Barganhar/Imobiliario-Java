@@ -1,12 +1,11 @@
 package view;
 
-import java.util.Scanner;
+import utils.Console;
 import models.Casa;
 import controllers.CasaController;
 
 public class CadastrarCasa {
 
-	private static Scanner sc = new Scanner(System.in);
 	private static CasaController controller = CasaController.retornarInstancia();
 	private static Casa casa;
 
@@ -15,23 +14,19 @@ public class CadastrarCasa {
 
 		System.out.println("\n-----CADASTRAR CASA-----");
 
-		System.out.println("\nNome atribuido a casa: ");
-		casa.setNome(sc.next());
+		casa.setNome(Console.lerString("\nNome atribuido a casa: "));
 
-		System.out.println("\nEndere�o: ");
-		casa.setEndereco(sc.next());
+		casa.setEndereco(Console.lerString("\nEndereço: "));
 
-		System.out.println("\nCEP: ");
-		casa.setCep(sc.next());
+		casa.setCep(Console.lerString("\nCEP: "));
 
-		System.out.println("\nValor: ");
-		casa.setValor(sc.nextDouble());// estava como float
+		casa.setValor(Console.lerDouble("\nValor: "));// estava como float
 
 		// return casa;
 		if (controller.cadastrar(casa)) {
 			System.out.println("\n Casa cadastrada com sucesso!");
 		} else {
-			System.out.println("\n Essa casa j� existe");
+			System.out.println("\n Essa casa já existe");
 		}
 	}
 

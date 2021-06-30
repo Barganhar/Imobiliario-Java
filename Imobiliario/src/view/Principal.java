@@ -1,11 +1,10 @@
 
 package view;
 
-import java.util.Scanner;
+import utils.Console;
 
 public class Principal {
 
-	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
@@ -18,8 +17,7 @@ public class Principal {
 			System.out.println("3 - Corretor");
 			System.out.println("4 - Negocios");
 			System.out.println("5 - Sair");
-			System.out.println("\nDigite a op��o desejada: ");
-			opcao = sc.nextInt();
+			opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 
 			switch (opcao) {
 				case 1: {
@@ -30,8 +28,7 @@ public class Principal {
 						System.out.println("3 - Alterar cliente");
 						System.out.println("4 - Deletar cliente");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a op��o desejada: ");
-						opcao = sc.nextInt();
+						opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 
 						switch (opcao) {
 							case 1:
@@ -65,8 +62,7 @@ public class Principal {
 						System.out.println("3 - Alterar casa");
 						System.out.println("4 - Deletar casa");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
-						opcao = sc.nextInt();
+						opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 
 						switch (opcao) {
 							case 1:
@@ -100,8 +96,7 @@ public class Principal {
 						System.out.println("3 - Alterar corretor");
 						System.out.println("4 - Deletar corretor");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
-						opcao = sc.nextInt();
+						opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 
 						switch (opcao) {
 							case 1:
@@ -136,8 +131,7 @@ public class Principal {
 						System.out.println("6 - Total de venda");
 						System.out.println("7 - Total de aluguel");
 						System.out.println("0 - Voltar");
-						System.out.println("\nDigite a opção desejada: ");
-						opcao = sc.nextInt();
+						opcao = Console.lerInteiro("\nDigite a opção desejada: ");
 
 						switch (opcao) {
 							case 1:

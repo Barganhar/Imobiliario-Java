@@ -1,14 +1,13 @@
 package view;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import utils.Console;
 
 import controllers.CorretorController;
 import models.Corretor;
 
 public class CadastrarCorretor {
 
-	private static Scanner sc = new Scanner(System.in);
 	private static CorretorController controller = CorretorController.retornarInstancia();
 	private static Corretor corretor;
 	private static ArrayList<Corretor> corretores;;
@@ -19,11 +18,9 @@ public class CadastrarCorretor {
 		corretor = new Corretor();
 
 		System.out.println("\n-----CADASTRO DE CORRETOR-----");
-		System.out.println("\nNome: ");
-		corretor.setNome(sc.next());
+		corretor.setNome(Console.lerString("\nNome: "));
 
-		System.out.println("\nCPF: ");
-		corretor.setCpf(sc.next());
+		corretor.setCpf(Console.lerString("\nCPF: "));
 
 		if (controller.cadastrar(corretor)) {
 			System.out.println("Corretor cadastrado com sucesso!");

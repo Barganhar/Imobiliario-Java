@@ -1,13 +1,12 @@
 package view;
 
-import java.util.Scanner;
+import utils.Console;
 
 import controllers.ClienteController;
 import models.Cliente;
 
 public class CadastrarCliente {
 
-    private static Scanner sc = new Scanner(System.in);
     private static ClienteController controller = ClienteController.retornarInstancia();
     private static Cliente cliente;
 
@@ -15,20 +14,15 @@ public class CadastrarCliente {
         cliente = new Cliente();
 
         System.out.println("\n-----CADASTRO DE CLIENTE-----");
-        System.out.println("\nNome: ");
-        cliente.setNome(sc.next());
+        cliente.setNome(Console.lerString("\nNome: "));
 
-        System.out.println("\nCPF: ");
-        cliente.setCpf(sc.next());
+        cliente.setCpf(Console.lerString("\nCPF: "));
 
-        System.out.println("\nEmail: ");
-        cliente.setEmail(sc.next());
+        cliente.setEmail(Console.lerString("\nEmail: "));
 
-        System.out.println("\nSalario: ");
-        cliente.setSalario(sc.nextFloat());
+        cliente.setSalario(Console.lerFloat("\nSalario: "));
 
-        System.out.println("\nPossui forma de garantia? (S/N)");
-        cliente.setGarantia(sc.next());
+        cliente.setGarantia(Console.lerString("\nPossui forma de garantia? (S/N)"));
 
         if (controller.cadastrar(cliente)) {
             System.out.println("Cliente cadastrado com sucesso!");

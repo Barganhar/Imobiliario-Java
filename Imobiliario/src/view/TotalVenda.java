@@ -11,11 +11,12 @@ public class TotalVenda {
         int contador = 0;
         System.out.println("\n".repeat(20));
         System.out.println("\n -- LISTAR VENDAS -- \n");
-        for (Comercio comercioCadastrada : controller.listarAluguel()) {
+        for (Comercio comercioCadastrada : controller.listarVenda()) {
             if (comercioCadastrada instanceof Venda)
                 contador++;
         }
 
         System.out.println("contador: " + contador);
     }
+
 }

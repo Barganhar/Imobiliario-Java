@@ -1,6 +1,6 @@
 package view;
 
-import java.util.Scanner;
+import utils.Console;
 
 import controllers.ClienteController;
 import controllers.ComercioController;
@@ -13,7 +13,6 @@ import models.Venda;
 
 public class CadastrarVenda {
 
-	private static Scanner sc = new Scanner(System.in);
 	private static ComercioController controllerComercio = ComercioController.retornarInstancia();
 	private static ClienteController controllerCliente = ClienteController.retornarInstancia();
 	private static CorretorController controllerCorretor = CorretorController.retornarInstancia();
@@ -30,21 +29,17 @@ public class CadastrarVenda {
 		venda = new Venda();
 		corretor = new Corretor();
 
-		System.out.println("\nNome Comprador: ");
-		venda.setNome(sc.next());
+		venda.setNome(Console.lerString("\nNome Comprador: "));
 
-		System.out.println("\nInforme o CPF do cliente: ");
-		cliente = controllerCliente.buscarPorCpf(sc.next());
+		cliente = controllerCliente.buscarPorCpf(Console.lerString("\nInforme o CPF do cliente: "));
 		if (cliente != null) {
 			venda.setCliente(cliente);
 
-			System.out.println("\nInforme o CPF do corretor: ");
-			corretor = controllerCorretor.buscarPorCpf(sc.next());
+			corretor = controllerCorretor.buscarPorCpf(Console.lerString("\nInforme o CPF do corretor: "));
 			if (corretor != null) {
 				venda.setCorretor(corretor);
 
-				System.out.println("\nInforme o Nome da casa: ");
-				casa = controllerCasa.buscarPorNome(sc.next());
+				casa = controllerCasa.buscarPorNome(Console.lerString("\nInforme o Nome da casa: "));
 				if (casa != null) {
 					String nome = casa.getNome();
 					// String valor = casa.getValor();
@@ -58,21 +53,21 @@ public class CadastrarVenda {
 					venda.setTipo("venda");
 
 					if (controllerComercio.cadastrar(venda)) {
-						System.out.println("\nVenda cadastrado com sucesso!");
+						System.out.println("\nVenda cadastrada com sucesso!");
 					} else {
 						System.out.println("Essa casa não esta disponivel!");
 					}
 
 				} else {
-					System.out.println("N�o h� casas disponiveis");
+					System.out.println("Não há casas disponiveis");
 				}
 
 			} else {
-				System.out.println("\nCliente n�o encontrado");
+				System.out.println("\nCliente não encontrado");
 			}
 
 		} else {
-			System.out.println("\nCliente n�o encontrado");
+			System.out.println("\nCliente não encontrado");
 		}
 
 	}
